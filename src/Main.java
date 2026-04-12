@@ -1,34 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        MyStack<Integer> stack = new MyStack<>();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("Stack peek: " + stack.peek());
+        System.out.println("Stack pop: " + stack.pop());
+        System.out.println("Stack size: " + stack.size());
 
-        list.add(10);
-        list.add(20);
-        list.addFirst(5);
-        list.addLast(30);
-        list.add(2, 15);
+        MyQueue<Integer> queue = new MyQueue<>();
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        System.out.println("Queue peek: " + queue.peek());
+        System.out.println("Queue dequeue: " + queue.dequeue());
+        System.out.println("Queue size: " + queue.size());
 
-        System.out.println("First: " + list.getFirst());
-        System.out.println("Last: " + list.getLast());
-        System.out.println("Index 2: " + list.get(2));
-        System.out.println("Size: " + list.size());
-
-        list.removeFirst();
-        list.removeLast();
-        list.set(1, 100);
-
-        System.out.println("After changes:");
-        for (Integer x : list) {
-            System.out.println(x);
-        }
-
-        System.out.println("Index of 100: " + list.indexOf(100));
-        System.out.println("Exists 20: " + list.exists(20));
-
-        list.sort();
-        System.out.println("After sort:");
-        for (Integer x : list) {
-            System.out.println(x);
-        }
+        MyMinHeap<Integer> heap = new MyMinHeap<>();
+        heap.insert(5);
+        heap.insert(2);
+        heap.insert(8);
+        heap.insert(1);
+        System.out.println("Heap min: " + heap.getMin());
+        System.out.println("Extract min: " + heap.extractMin());
+        System.out.println("New min: " + heap.getMin());
+        System.out.println("Heap size: " + heap.size());
     }
 }
